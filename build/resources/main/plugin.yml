@@ -1,5 +1,0 @@
-name: PitchoutExemple
-version: 1.0
-author: Epsilon
-main: fr.epsilon.exemple.PitchoutMain
-depend: [EpsilonLink]
