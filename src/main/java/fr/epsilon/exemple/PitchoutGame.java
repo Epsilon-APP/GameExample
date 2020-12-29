@@ -23,7 +23,7 @@ public class PitchoutGame extends EGame<PitchoutPlayer> implements Listener {
     public void handleStart() {
         Bukkit.broadcastMessage("Bonne chance à vous !");
 
-        for (PitchoutPlayer pitchoutPlayer : getInGamePlayer()) {
+        for (PitchoutPlayer pitchoutPlayer : getInGamePlayers()) {
             teleportGame(pitchoutPlayer);
             pitchoutPlayer.setupGame();
         }
@@ -31,7 +31,7 @@ public class PitchoutGame extends EGame<PitchoutPlayer> implements Listener {
 
     @Override
     public void handleEnd() {
-        PitchoutPlayer winner = getInGamePlayer().get(0);
+        PitchoutPlayer winner = getInGamePlayers().get(0);
         Player playerWinner = winner.getPlayer();
 
         Bukkit.broadcastMessage(playerWinner.getName() + "a gagné la partie !");
@@ -69,7 +69,7 @@ public class PitchoutGame extends EGame<PitchoutPlayer> implements Listener {
     }
 
     private void checkWin() {
-        if (getInGamePlayer().size() == 1)
+        if (getInGamePlayers().size() == 1)
             endGame();
     }
 
